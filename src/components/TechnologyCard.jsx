@@ -1,4 +1,4 @@
-function TechnologyCard({ technology }) {
+function TechnologyCard({ technology, isSelected, onAdd }) {
   const { name, category, description, icon, rating, difficulty, badge } = technology
 
   return (
@@ -14,8 +14,13 @@ function TechnologyCard({ technology }) {
         <span>{difficulty}</span>
         <span className="rating"><b aria-hidden="true">★</b> {rating}</span>
       </div>
-      <button className="stack-button" type="button">
-        Add to Stack
+      <button
+        className="stack-button"
+        type="button"
+        disabled={isSelected}
+        onClick={() => onAdd(technology)}
+      >
+        {isSelected ? '✓ Added to Stack' : 'Add to Stack'}
       </button>
     </article>
   )

@@ -350,6 +350,20 @@ button {
   opacity: 0.88;
 }
 
+.stack-button:disabled {
+  cursor: not-allowed;
+  background: #e9eef5;
+  color: #64748b;
+  opacity: 1;
+}
+
+.stack-button:focus-visible,
+.selected-item button:focus-visible,
+.remove-all-button:focus-visible {
+  outline: 3px solid rgba(237, 50, 126, 0.25);
+  outline-offset: 2px;
+}
+
 .loading-state,
 .error-state {
   display: flex;
