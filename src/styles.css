@@ -371,8 +371,9 @@ button {
 
 .stack-button:disabled {
   cursor: not-allowed;
-  background: #e9eef5;
-  color: #64748b;
+  background: #fff1f7;
+  color: #c92169;
+  font-weight: 600;
   opacity: 1;
 }
 
