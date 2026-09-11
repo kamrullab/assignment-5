@@ -369,15 +369,16 @@ button {
   opacity: 0.88;
 }
 
-.stack-button.is-added {
+.stack-button:disabled {
+  cursor: not-allowed;
   background: #fff1f7;
   color: #c92169;
   font-weight: 600;
   opacity: 1;
 }
 
-.stack-button.is-added:hover {
-  background: #fde5f0;
+.stack-button:disabled:hover {
+  background: #fff1f7;
   opacity: 1;
 }
 
