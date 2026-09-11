@@ -15,9 +15,9 @@ function TechnologyCard({ technology, isSelected, onAdd }) {
         <span className="rating"><b aria-hidden="true">★</b> {rating}</span>
       </div>
       <button
-        className="stack-button"
+        className={`stack-button${isSelected ? ' is-added' : ''}`}
         type="button"
-        disabled={isSelected}
+        aria-disabled={isSelected}
         onClick={() => onAdd(technology)}
       >
         {isSelected ? '✓ Added to Stack' : 'Add to Stack'}
