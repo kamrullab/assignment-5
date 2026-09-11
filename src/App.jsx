@@ -1,12 +1,12 @@
 import Header from './components/Header.jsx'
+import Hero from './components/Hero.jsx'
 
 function App() {
   return (
     <>
       <Header />
-      <main id="home" className="app-shell">
-        <h1>Dev Stack</h1>
-        <p>The project foundation is ready.</p>
+      <main>
+        <Hero />
       </main>
     </>
   )

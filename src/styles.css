@@ -40,14 +40,90 @@ button {
   cursor: pointer;
 }
 
-.app-shell {
-  width: min(1120px, calc(100% - 40px));
-  margin: 80px auto;
-}
-
 .container {
   width: min(1120px, calc(100% - 40px));
   margin-inline: auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 70px;
+  min-height: 540px;
+  padding-block: 72px;
+}
+
+.hero-content h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(44px, 5vw, 62px);
+  font-weight: 800;
+  letter-spacing: -2.8px;
+  line-height: 1.04;
+}
+
+.hero-content h1 span {
+  display: block;
+  background: var(--brand-gradient);
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-content p {
+  max-width: 590px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.primary-button,
+.outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.primary-button {
+  background: var(--brand-gradient);
+  box-shadow: 0 10px 24px rgba(237, 50, 126, 0.16);
+  color: white;
+}
+
+.outline-button {
+  border: 1px solid var(--line);
+  color: #475569;
+}
+
+.primary-button:hover,
+.outline-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.12);
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-visual img {
+  width: min(100%, 440px);
+  height: auto;
+  filter: drop-shadow(0 24px 36px rgba(82, 44, 176, 0.15));
 }
 
 .site-header {
@@ -196,5 +272,48 @@ button {
   .mobile-nav a:hover {
     background: #f8fafc;
     color: #ed327e;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    min-height: auto;
+    padding-block: 58px 72px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(38px, 11vw, 50px);
+    letter-spacing: -2px;
+  }
+
+  .hero-content p {
+    margin-top: 22px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .hero-visual {
+    grid-row: 2;
+  }
+
+  .hero-visual img {
+    width: min(90%, 380px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero {
+    gap: 36px;
+    min-height: 500px;
+  }
+
+  .hero-content h1 {
+    font-size: 46px;
   }
 }
