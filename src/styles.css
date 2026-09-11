@@ -151,22 +151,122 @@ button {
   color: #8090a9;
 }
 
+.technologies-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  align-items: start;
+  gap: 26px;
+}
+
 .technology-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+  gap: 18px;
 }
 
 .technology-card {
   display: flex;
   flex-direction: column;
   min-height: 320px;
-  padding: 24px;
+  padding: 20px;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: white;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.035);
   transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.stack-panel {
+  position: sticky;
+  top: 96px;
+  min-height: 248px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.035);
+}
+
+.stack-panel h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.selected-count {
+  margin: 7px 0 14px;
+  color: #9aabc1;
+  font-size: 12px;
+}
+
+.empty-stack {
+  display: grid;
+  min-height: 88px;
+  place-items: center;
+  border: 1px dashed #d9e1eb;
+  border-radius: 10px;
+  color: #a0afc4;
+  font-size: 12px;
+}
+
+.selected-list {
+  display: grid;
+  gap: 7px;
+}
+
+.selected-item {
+  display: grid;
+  grid-template-columns: 34px 1fr 28px;
+  align-items: center;
+  gap: 9px;
+  min-height: 56px;
+  padding: 8px;
+  border: 1px solid #dbe3ed;
+  border-radius: 8px;
+}
+
+.selected-item img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.selected-item strong,
+.selected-item span {
+  display: block;
+}
+
+.selected-item strong {
+  overflow: hidden;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selected-item span {
+  margin-top: 3px;
+  color: #93a2b7;
+  font-size: 8px;
+}
+
+.selected-item button {
+  border: 0;
+  background: transparent;
+  color: #9aabc1;
+  font-size: 27px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.remove-all-button {
+  width: 100%;
+  min-height: 38px;
+  margin-top: 48px;
+  border: 1px solid #ff9b9b;
+  border-radius: 7px;
+  background: white;
+  color: #ef3333;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .technology-card:hover {
@@ -466,6 +566,15 @@ button {
   .technology-grid {
     grid-template-columns: 1fr;
   }
+
+  .technologies-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .stack-panel {
+    position: static;
+    grid-row: 1;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -478,6 +587,16 @@ button {
     font-size: 46px;
   }
 
+
+  .technology-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .technologies-layout {
+    grid-template-columns: minmax(0, 1fr) 240px;
+  }
 
   .technology-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

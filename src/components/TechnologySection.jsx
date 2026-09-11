@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import StackPanel from './StackPanel.jsx'
 import TechnologyCard from './TechnologyCard.jsx'
 
 function TechnologySection() {
@@ -36,10 +37,13 @@ function TechnologySection() {
       {error && <p className="error-state" role="alert">{error}</p>}
 
       {!loading && !error && (
-        <div className="technology-grid">
-          {technologies.map((technology) => (
-            <TechnologyCard key={technology.id} technology={technology} />
-          ))}
+        <div className="technologies-layout">
+          <div className="technology-grid">
+            {technologies.map((technology) => (
+              <TechnologyCard key={technology.id} technology={technology} />
+            ))}
+          </div>
+          <StackPanel selectedTechnologies={[]} />
         </div>
       )}
     </section>
