@@ -2,7 +2,7 @@ function TechnologyCard({ technology, isSelected, onAdd }) {
   const { name, category, description, icon, rating, difficulty, badge } = technology
 
   return (
-    <article className="technology-card">
+    <article className={`technology-card${isSelected ? ' selected-card' : ''}`}>
       <div className="card-topline">
         <img className="technology-icon" src={icon} alt={`${name} logo`} />
         <span className="technology-badge">{badge}</span>
