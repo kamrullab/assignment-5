@@ -308,12 +308,56 @@ button {
 
 .technology-badge {
   padding: 5px 11px;
-  border: 1px solid #d9efff;
+  border: 1px solid currentColor;
   border-radius: 999px;
-  background: #eff9ff;
-  color: #1994d6;
+  background: #f5f8fb;
+  color: #64748b;
   font-size: 11px;
   font-weight: 600;
+}
+
+.badge-react,
+.badge-tailwindcss {
+  background: #ecfbff;
+  color: #22b8d8;
+}
+
+.badge-vue,
+.badge-nodejs {
+  background: #effbf5;
+  color: #2fa36b;
+}
+
+.badge-svelte {
+  background: #fff4ed;
+  color: #ff4a08;
+}
+
+.badge-nextjs {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.badge-postgresql,
+.badge-typescript,
+.badge-docker {
+  background: #eef7ff;
+  color: #2176b8;
+}
+
+.badge-redis {
+  background: #fff0f0;
+  color: #d82c20;
+}
+
+.badge-javascript {
+  background: #fff9dc;
+  color: #ad8d00;
+}
+
+.badge-java {
+  background: #fff2ed;
+  color: #e14a2b;
 }
 
 .technology-card h3 {
