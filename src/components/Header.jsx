@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
+  { label: 'Home', href: '/' },
   { label: 'Technologies', href: '#technologies' },
   { label: 'Projects', href: '#projects' },
   { label: 'About', href: '#about' },
@@ -28,7 +28,7 @@ function Header() {
           <span />
         </button>
 
-        <a className="brand" href="#home" aria-label="Dev Stack home">
+        <a className="brand" href="/" aria-label="Dev Stack home">
           <img src="/assets/logo-text.png" alt="Dev Stack" />
         </a>
 
