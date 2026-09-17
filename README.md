@@ -20,6 +20,8 @@ Dev Stack is a responsive React application for exploring popular web developmen
 1. Browse 12 technologies loaded from a separate JSON file, with a loading state while the data is fetched.
 2. Add technologies to a personal stack without duplicates, then remove one item or clear the full stack.
 3. Receive toast messages for add, duplicate, remove, and remove-all actions on a responsive desktop, tablet, and mobile layout.
+4. Search technologies by name, description, or badge and filter the cards by category.
+5. Keep selected stack items after refreshing the page with local browser storage.
 
 ## Run Locally
 

@@ -7,7 +7,14 @@ function TechnologySection() {
   const [technologies, setTechnologies] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
-  const [selectedTechnologies, setSelectedTechnologies] = useState([])
+  const [selectedTechnologies, setSelectedTechnologies] = useState(() => {
+    try {
+      const savedStack = localStorage.getItem('dev-stack-selection')
+      return savedStack ? JSON.parse(savedStack) : []
+    } catch {
+      return []
+    }
+  })
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')
 
@@ -23,6 +30,13 @@ function TechnologySection() {
       .catch((loadError) => setError(loadError.message))
       .finally(() => setLoading(false))
   }, [])
+
+  useEffect(() => {
+    localStorage.setItem(
+      'dev-stack-selection',
+      JSON.stringify(selectedTechnologies),
+    )
+  }, [selectedTechnologies])
 
   const addToStack = (technology) => {
     const alreadySelected = selectedTechnologies.some((item) => item.id === technology.id)
