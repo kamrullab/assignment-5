@@ -155,6 +155,89 @@ button {
   color: #8090a9;
 }
 
+.technology-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: -16px 0 28px;
+}
+
+.search-field {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+  max-width: 430px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: #94a3b8;
+  background: white;
+}
+
+.search-field input,
+.category-field select {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+}
+
+.search-field input::placeholder {
+  color: #9aa8ba;
+}
+
+.category-field {
+  width: 180px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: white;
+}
+
+.category-field select {
+  min-height: 42px;
+  cursor: pointer;
+}
+
+.search-field:focus-within,
+.category-field:focus-within {
+  border-color: #e88abe;
+  box-shadow: 0 0 0 3px rgba(237, 50, 126, 0.1);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.no-results {
+  display: grid;
+  min-height: 240px;
+  place-content: center;
+  gap: 8px;
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.no-results strong {
+  color: #475569;
+}
+
 .technologies-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 260px;
@@ -726,6 +809,17 @@ button {
 
   .section-heading {
     text-align: center;
+  }
+
+  .technology-filters {
+    flex-direction: column;
+    margin-top: -10px;
+  }
+
+  .search-field,
+  .category-field {
+    width: 100%;
+    max-width: none;
   }
 
   .technology-grid {
